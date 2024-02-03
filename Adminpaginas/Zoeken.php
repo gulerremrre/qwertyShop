@@ -36,7 +36,7 @@
                             <li class="scroll-to-section"><a href="gaminglaptop.html">Laptops</a></li>
 
                             <li class="submenu">
-                                <a href="javascript:;">components</a>
+                                <a href="javascript:">components</a>
                                 <ul>
                                     <li><a href="cpu.html">CPU</a></li>
                                     <li><a href="gpu.html">GPU</a></li>
@@ -44,7 +44,7 @@
                                 </ul>
                             </li>
                             <li class="submenu">
-                                <a href="javascript:;">Pages</a>
+                                <a href="javascript:">Pages</a>
                             </li>
                             <li class="scroll-to-section"><a href="login.html">login</a></li>
                             <li class="scroll-to-section"><a href="alleProducten.php">Admin</a></li>
@@ -103,7 +103,7 @@
                             echo "<div class='row'>";
                             echo '<div class="col-md-8 table-responsive mx-auto">';
                             echo '<h2>Resultaten</h2>';
-                            echo '<br><table border="1" class="table table-responsive table-dark table-striped">';
+                            echo '<br><table class="table table-responsive table-dark table-striped">';
                             echo '<thead>';
                             echo '<tr>';
                             echo '<th scope="col">ArtikelNR</th>';

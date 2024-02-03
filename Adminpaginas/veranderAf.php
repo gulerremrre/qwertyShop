@@ -1,8 +1,84 @@
+<!-- updaten code door Raïf -->
 <?php $Error = ''; ?>
+<?php
+
+$selectedgenre = "";
+if (isset($_GET['artikelid'])) 
+{
+    $update = $_GET['artikelid'];
+}
+
+if (isset($_POST["Verander"])) 
+{
+    $update = $_POST["productid"];
+}
+$mysqli = new MySqli("localhost", "root", "", "computershopphp");
+
+if (mysqli_connect_errno()) 
+{
+    trigger_error('fout bij verbinding:' . $mysqli->error);
+}
+
+$sql = "SELECT * FROM tblartikels WHERE artikelnr = ?";
+$stmt = $mysqli->prepare($sql);
+$stmt->bind_param("i", $update);
+$stmt->execute();
+$stmt->bind_result($artikelnr, $artikelnaam, $prijs, $korting, $genreid, $omschrijving, $merk);
+$stmt->fetch();
+
+$stmt->close();
+
+
+?>
+<?php
+if (isset($_POST["Verander"])) {
+    echo ("hier");
+    if ((isset($_POST['productid'])) && (isset($_POST['productnaam'])) && ($_POST['productnaam'] != "")) {
+        $Error = "";
+
+
+        $sql = "UPDATE tblartikels SET artikelnaam = ?,prijs = ?, korting = ?, genreid = ?, omschrijving = ?, merk = ? WHERE artikelnr = ?";
+        if ($stmt = $mysqli->prepare($sql))
+        {
+            
+            $artikelnr = $_POST["productid"];
+            $artikelnaam = $_POST["productnaam"];
+            $korting = $_POST["productkorting"];
+            $prijs = $_POST["Prijs"];
+            $merk = $_POST["merk"];
+            $genreid = $_POST["Genre"];
+            $Omschrijving = $_POST["Omschrijving"];
+            $stmt->bind_param('sidsssi', $artikelnaam, $prijs, $korting, $genreid, $Omschrijving, $merk, $artikelnr);
+
+            if ($stmt->execute())
+            {
+                header("location:alleProducten.php");
+            }
+            else 
+            {
+                echo '<p class="text-danger">Error: ' . $stmt->error . '</p>';
+            }
+            $stmt->close();
+        } 
+        
+    }
+    else
+    {
+        $Error = '<p class="text-danger">vul in alle velden.</p>';
+        
+    }
+}
+?>
+<!-- updaten code door raïf -->
+
+
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,96 +99,13 @@
     <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="assets/css/lightbox.css">
-
     <link rel="stylesheet" href="assets/css/admincss.css">
-    <link rel="stylesheet" href="assets/css/toevoegen.css">
-
-    
-
-    <style type="text/css">
-        .fout {
-            color: #F00;
-        }
-    </style>
-
-    <script type="text/javascript">
-
-        function wijzig(){
-
-            var ok =true;
-
-
-        if(isNaN(document.getElementById("prijstoe").value)){
-            document.getElementById("prijsongeldig").innerHTML = "Alleen cijfers invullen.";
-            ok=false;
-
-        }
-        else{
-            document.getElementById("prijsongeldig").innerHTML = "";
-
-        }
-
-        if(isNaN(document.getElementById("productkortingtoe").value)){
-            document.getElementById("kortingongeldig").innerHTML = "Alleen cijfers invullen.";
-            ok=false;
-
-        }
-        else{
-            document.getElementById("kortingongeldig").innerHTML = "";
-
-        }
-
-        if(ok == true){
-            document.formtoevoegen.submit();
-        }
-
-        }
- 
-    </script>
-
-<?php
-        print_r($_POST);
-        $mysqli = new MySQLi("localhost", "root", "", "computershopphp");
-         $Error = "";
-
-        if ((isset($_POST['productnaamtoe'])) && ($_POST['productnaamtoe']) != "")
-        {
-             
-            $sql = "INSERT INTO tblartikels (artikelnaam, prijs, korting, genreid, omschrijving, merk) VALUES (?, ?, ?, ?, ?, ?)";
-            $stmt = $mysqli->prepare($sql);
-        
-            $stmt->bind_param('sdisss', $artikelNaam, $prijs, $korting, $genreid, $omschrijving, $merk);
-            $artikelNaam = $_POST['productnaamtoe'];
-            $korting = $_POST['productkortingtoe'];
-            $prijs = $_POST["prijstoe"];
-            $merk = $_POST['merktoe'];
-            $omschrijving = $_POST['omschrijvingtoe'];
-            $genreid = $_POST['genretoe'];
-
-
-            if ($stmt->execute())
-            {
-                    header("location:alleProducten.php");
-            } 
-            else 
-            {
-                    echo '<p class="text-danger">Error: ' . $stmt->error . '</p>';
-            }
-        
-
-            $stmt->close();
-
-        } 
-        else 
-        {
-                $Error = '<p class="text-danger">Vul alle velden in.</p>';
-                echo $Error;
-        }
-        
-    ?>
+</head>
 
 <body>
-<header class="header-area header-sticky">
+
+    <!-- nav -->
+    <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -123,7 +116,7 @@
                             <li class="scroll-to-section"><a href="gaminglaptop.html">Laptops</a></li>
 
                             <li class="submenu">
-                                <a href="javascript:;">components</a>
+                                <a href="javascript:">components</a>
                                 <ul>
                                     <li><a href="cpu.html">CPU</a></li>
                                     <li><a href="gpu.html">GPU</a></li>
@@ -131,7 +124,7 @@
                                 </ul>
                             </li>
                             <li class="submenu">
-                                <a href="javascript:;">Pages</a>
+                                <a href="javascript:">Pages</a>
                             </li>
                             <li class="scroll-to-section"><a href="login.html">login</a></li>
                             <li class="scroll-to-section"><a href="alleProducten.php">Admin</a></li>
@@ -145,32 +138,37 @@
             </div>
         </div>
     </header>
+    <!-- nav -->
 
+    <!-- form -->
 
-<!-- form -->
-   
-   <div class="container mt-5 ">
-    <div class="row">
-        <div class="col-md-6 mx-auto">
-            <br>
-            <h2 class="mt-5">Toevoegen</h2>
-            <br>
-            <form name="formtoevoegen" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="bg-info bg-info border rounded p-3">
-                <div class="form-group">
-                    <label for="productnaamtoe">ArtikelNaam:</label>
-                    <input type="text" class="form-control" id="productnaamtoe" required name="productnaamtoe"><label id="productongeldig" class="fout"></label>
-                </div>
-                <div class="form-group">
-                    <label for="prijstoe">Prijs:</label>
-                    <input type="text" class="form-control" id="prijstoe" required name="prijstoe"><label id="prijsongeldig" class="fout"></label>
-                </div>
-                <div class="form-group">
-                    <label for="productkortingtoe">Korting:</label>
-                    <input type="text" class="form-control" id="productkortingtoe" name="productkortingtoe"><label id="kortingongeldig" class="fout"></label>
-                </div>
-                <div class="form-group">
-                    <label for="merktoe">Merk:</label>
-                    <select name="merktoe" id="merktoe" class="form-control">
+    <div class="container pt-4 mt-5">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <h2 class="mt-5">Veranderen</h2>
+                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="bg-info border rounded p-3">
+                    <div class="form-group">
+                        <label for="productid">ArtikelNR:</label>
+                        <input type="text" class="form-control" id="productid" name="productid" required value="<?php echo $artikelnr; ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="productnaam">ArtikelNaam:</label>
+                        <input type="text" class="form-control" id="productnaam" name="productnaam" required value="<?php echo $artikelnaam; ?>">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="productkorting">Korting:</label>
+                        <input type="text" class="form-control" id="productkorting" name="productkorting" required value="<?php echo $korting; ?>">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Prijs">Prijs:</label>
+                        <input type="text" class="form-control" id="Prijs" name="Prijs" required value="<?php echo $prijs; ?>">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="merk">Merk:</label>
+                        <select name="merk" id="merk" class="form-control">
                             <option value="" selected>Select Merk</option>
                             <?php
                             $sql = "SELECT merk FROM tblmerk ";
@@ -196,15 +194,16 @@
                             }
 
                             ?>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="omschrijvingtoe">Omschrijving:</label>
-                    <input type="text" class="form-control" id="omschrijvingtoe" name="omschrijvingtoe">
-                </div>
-                <div class="form-group">
-                    <label for="genretoe">Genre:</label>
-                    <select name="genretoe" id="genretoe" class="form-control">
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Omschrijving">Omschrijving:</label>
+                        <input type="text" class="form-control" id="Omschrijving" name="Omschrijving" value="<?php echo $omschrijving; ?>">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="Genre">Genre:</label>
+                        <select name="Genre" id="Genre" class="form-control">
                             <option value="" selected>Select Genre</option>
                             <?php
                                 $sql = "SELECT genre FROM tblgenre";
@@ -232,14 +231,21 @@
                             ?>
                         
                     </select>
-                </div>
-                    <input type="button" name="voegtoe" id="voegToe" value="voegtoe" class="btn btn-secondary" onclick="wijzig()">
-            </form>
-            <br>
+
+                    </div>
+                    <button type="submit" name="Verander" id="Verander" class="btn btn-primary">Verander</button>
+                    <label> <?php echo $Error; ?></label>
+
+                </form>
+
+            </div>
+
+
         </div>
+
     </div>
 
-<!-- form -->
+
 
 
  <!-- jQuery -->
