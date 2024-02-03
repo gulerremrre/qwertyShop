@@ -14,17 +14,17 @@
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
 
-    <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+    <link rel="stylesheet" href="../assets/css/templatemo-hexashop.css">
 
-    <link rel="stylesheet" href="assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="../assets/css/owl-carousel.css">
 
-    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <link rel="stylesheet" href="../assets/css/lightbox.css">
 
-    <link rel="stylesheet" href="assets/css/admincss.css">
+    <link rel="stylesheet" href="../assets/css/alleproducten.css">
 
     
 
@@ -40,54 +40,75 @@
 
             let ok =true;
 
-        if(document.getElementById("productongeldig").value === "")
-        {
-            document.getElementById("productongeldig").innerHTML = "geef een productnaam in";
-            ok = false
-        }
-        else
-        {
-            document.getElementById("productongeldig").innerHTML = "";
-        }
-        
-        if(document.getElementById("omschrijvingongeldig").value === "")
-        {
-            document.getElementById("omschrijvingongeldig").innerHTML = "geef een omschrijving in";
-            ok = false
-        }
-        else
-        {
-            document.getElementById("omschrijvingongeldig").innerHTML = "";
-        }
+            if(document.getElementById("productnaamtoe").value === "")
+            {
+                document.getElementById("productongeldig").innerHTML = "geef een productnaam in";
+                ok = false
+            }
+            else
+            {
+                document.getElementById("productongeldig").innerHTML = "";
+            }
 
-        if(isNaN(document.getElementById("prijstoe").value))
-        {
-            document.getElementById("prijsongeldig").innerHTML = "Alleen cijfers invullen.";
-            ok=false;
 
-        }
-        else
-        {
-            document.getElementById("prijsongeldig").innerHTML = "";
+            if(isNaN(document.getElementById("prijstoe").value))
+            {
+                document.getElementById("prijsongeldig").innerHTML = "Alleen cijfers invullen.";
+                ok=false;
 
-        }
+            }
+            else
+            {
+                document.getElementById("prijsongeldig").innerHTML = "";
 
-        if(isNaN(document.getElementById("productkortingtoe").value))
-        {
-            document.getElementById("kortingongeldig").innerHTML = "Alleen cijfers invullen.";
-            ok=false;
+            }
 
-        }
-        else
-        {
-            document.getElementById("kortingongeldig").innerHTML = "";
+            if(isNaN(document.getElementById("productkortingtoe").value))
+            {
+                document.getElementById("kortingongeldig").innerHTML = "Alleen cijfers invullen.";
+                ok=false;
 
-        }
+            }
+            else
+            {
+                document.getElementById("kortingongeldig").innerHTML = "";
 
-        if(ok === true)
-        {
-            document.formtoevoegen.submit();
-        }
+            }
+
+            if(document.getElementById("merktoe").value === "" || document.getElementById("merktoe").value === "Select Merk" )
+            {
+                document.getElementById("merkongeldig").innerHTML = "geef een merk in aub";
+                ok = false;
+            }
+            else
+            {
+                document.getElementById("merkongeldig").innerHTML = "";
+            }
+
+            if(document.getElementById("omschrijvingtoe").value === "")
+            {
+                document.getElementById("omschrijvingongeldig").innerHTML = "geef een omschrijving in";
+                ok = false
+            }
+            else
+            {
+                document.getElementById("omschrijvingongeldig").innerHTML = "";
+            }
+
+            if(document.getElementById("genretoe").value === "" || document.getElementById("genretoe").value === "Select Genre")
+            {
+                document.getElementById("genreongeldig").innerHTML = "geef een genre in";
+                ok = false;
+            }
+            else
+            {
+                document.getElementById("genreongeldig").innerHTML = "";
+            }
+
+            if(ok === true)
+            {
+                document.formtoevoegen.submit();
+            }
 
         }
  
@@ -141,22 +162,22 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="index.html" >Home</a></li>
-                            <li class="scroll-to-section"><a href="gamingpc.html">Pc's</a></li>
-                            <li class="scroll-to-section"><a href="gaminglaptop.html">Laptops</a></li>
+                            <li class="scroll-to-section"><a href="../index.html" >Home</a></li>
+                            <li class="scroll-to-section"><a href="../gamingpc.html">Pc's</a></li>
+                            <li class="scroll-to-section"><a href="../gaminglaptop.html">Laptops</a></li>
 
                             <li class="submenu">
                                 <a href="javascript:">components</a>
                                 <ul>
-                                    <li><a href="cpu.html">CPU</a></li>
-                                    <li><a href="gpu.html">GPU</a></li>
-                                    <li><a href="products.html">SSD</a></li>
+                                    <li><a href="../cpu.html">CPU</a></li>
+                                    <li><a href="../gpu.html">GPU</a></li>
+                                    <li><a href="../products.html">SSD</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
                                 <a href="javascript:">Pages</a>
                             </li>
-                            <li class="scroll-to-section"><a href="login.html">login</a></li>
+                            <li class="scroll-to-section"><a href="../login.html">login</a></li>
                             <li class="scroll-to-section"><a href="alleProducten.php">Admin</a></li>
                         </ul>        
                         <a class='menu-trigger'>
@@ -178,18 +199,21 @@
             <br>
             <h2 class="mt-5">Toevoegen</h2>
             <br>
-            <form name="formtoevoegen" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="bg-info bg-info border rounded p-3">
+            <form name="formtoevoegen" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="bg-info bg-info  rounded p-3">
                 <div class="form-group">
                     <label for="productnaamtoe">ArtikelNaam:</label>
-                    <input type="text" class="form-control" id="productnaamtoe" required name="productnaamtoe"><label id="productongeldig" class="fout"></label>
+                    <input type="text" class="form-control" id="productnaamtoe" required name="productnaamtoe">
+                    <label id="productongeldig" class="fout"></label>
                 </div>
                 <div class="form-group">
                     <label for="prijstoe">Prijs:</label>
-                    <input type="text" class="form-control" id="prijstoe" required name="prijstoe"><label id="prijsongeldig" class="fout"></label>
+                    <input type="text" class="form-control" id="prijstoe" required name="prijstoe">
+                    <label id="prijsongeldig" class="fout"></label>
                 </div>
                 <div class="form-group">
                     <label for="productkortingtoe">Korting:</label>
-                    <input type="text" class="form-control" id="productkortingtoe" name="productkortingtoe"><label id="kortingongeldig" class="fout"></label>
+                    <input type="text" class="form-control" id="productkortingtoe" name="productkortingtoe">
+                    <label id="kortingongeldig" class="fout"></label>
                 </div>
                 <div class="form-group">
                     <label for="merktoe">Merk:</label>
@@ -220,10 +244,12 @@
 
                             ?>
                     </select>
+                    <label id="merkongeldig" class="fout"></label>
                 </div>
                 <div class="form-group">
                     <label for="omschrijvingtoe">Omschrijving:</label>
-                    <input type="text" class="form-control" id="omschrijvingtoe" name="omschrijvingtoe"><label id="omschrijvingongeldig" class="fout"></label>
+                    <input type="text" class="form-control" id="omschrijvingtoe" name="omschrijvingtoe">
+                    <label id="omschrijvingongeldig" class="fout"></label>
                 </div>
                 <div class="form-group">
                     <label for="genretoe">Genre:</label>
@@ -255,6 +281,7 @@
                             ?>
                         
                     </select>
+                    <label id="genreongeldig" class="fout"></label>
                 </div>
                     <input type="button" name="voegtoe" id="voegToe" value="voegtoe" class="btn btn-secondary" onclick="wijzig()">
             </form>
@@ -266,26 +293,26 @@
 
 
  <!-- jQuery -->
- <script src="assets/js/jquery-2.1.0.min.js"></script>
+ <script src="../assets/js/jquery-2.1.0.min.js"></script>
 
 <!-- Bootstrap -->
-<script src="assets/js/popper.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/popper.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
 
 <!-- Plugins -->
-<script src="assets/js/owl-carousel.js"></script>
-<script src="assets/js/accordions.js"></script>
-<script src="assets/js/datepicker.js"></script>
-<script src="assets/js/scrollreveal.min.js"></script>
-<script src="assets/js/waypoints.min.js"></script>
-<script src="assets/js/jquery.counterup.min.js"></script>
-<script src="assets/js/imgfix.min.js"></script> 
-<script src="assets/js/slick.js"></script> 
-<script src="assets/js/lightbox.js"></script> 
-<script src="assets/js/isotope.js"></script> 
+<script src="../assets/js/owl-carousel.js"></script>
+<script src="../assets/js/accordions.js"></script>
+<script src="../assets/js/datepicker.js"></script>
+<script src="../assets/js/scrollreveal.min.js"></script>
+<script src="../assets/js/waypoints.min.js"></script>
+<script src="../assets/js/jquery.counterup.min.js"></script>
+<script src="../assets/js/imgfix.min.js"></script>
+<script src="../assets/js/slick.js"></script>
+<script src="../assets/js/lightbox.js"></script>
+<script src="../assets/js/isotope.js"></script>
 
 <!-- Global Init -->
-<script src="assets/js/custom.js"></script>
+<script src="../assets/js/custom.js"></script>
 
 
 </body>

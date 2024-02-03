@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="7f1c1a89-b87d-49a2-9d8f-91db902de47a" />
+          <option name="name" value="computershopphp" />
+          <option name="dbmsName" value="UNKNOWN" />
+          <option name="urls">
+            <array>
+              <option value="file://$USER_HOME$/Downloads/computershopphp.sql" />
+              <option value="file://$PROJECT_DIR$/tblartikels.sql" />
+              <option value="file://$PROJECT_DIR$/tblgenre.sql" />
+              <option value="file://$PROJECT_DIR$/tblmerk.sql" />
+            </array>
+          </option>
+          <option name="outLayout" value="File per object by schema.groovy" />
+        </State>
+      </list>
+    </option>
+  </component>
+</project>

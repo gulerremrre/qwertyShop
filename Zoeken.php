@@ -11,16 +11,16 @@
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 
-    <link rel="stylesheet" href="../assets/css/templatemo-hexashop.css">
+    <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
 
-    <link rel="stylesheet" href="../assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
-    <link rel="stylesheet" href="../assets/css/lightbox.css">
-    <link rel="stylesheet" href="../assets/css/zoeken.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <link rel="stylesheet" href="assets/css/zoeken.css">
 </head>
 
 <body>
@@ -31,22 +31,22 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="../index.html" >Home</a></li>
-                            <li class="scroll-to-section"><a href="../gamingpc.html">Pc's</a></li>
-                            <li class="scroll-to-section"><a href="../gaminglaptop.html">Laptops</a></li>
+                            <li class="scroll-to-section"><a href="index.html" >Home</a></li>
+                            <li class="scroll-to-section"><a href="gamingpc.html">Pc's</a></li>
+                            <li class="scroll-to-section"><a href="gaminglaptop.html">Laptops</a></li>
 
                             <li class="submenu">
-                                <a href="javascript:">components</a>
+                                <a href="javascript:;">components</a>
                                 <ul>
-                                    <li><a href="../cpu.html">CPU</a></li>
-                                    <li><a href="../gpu.html">GPU</a></li>
-                                    <li><a href="../products.html">SSD</a></li>
+                                    <li><a href="cpu.html">CPU</a></li>
+                                    <li><a href="gpu.html">GPU</a></li>
+                                    <li><a href="products.html">SSD</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
-                                <a href="javascript:">Pages</a>
+                                <a href="javascript:;">Pages</a>
                             </li>
-                            <li class="scroll-to-section"><a href="../login.html">login</a></li>
+                            <li class="scroll-to-section"><a href="login.html">login</a></li>
                             <li class="scroll-to-section"><a href="alleProducten.php">Admin</a></li>
                         </ul>        
                         <a class='menu-trigger'>
@@ -64,10 +64,7 @@
     <div class="row">
         <div class="col-md-8 mx-auto">
             <h2>Zoeken</h2>
-            <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>" name="searchForm" class="bg-info
-
-
-             rounded p-3">
+            <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>" name="searchForm" class="bg-info border rounded p-3">
                 <div class="form-group">
                     <label for="searchCategory">Selecteer zoekcategorie:</label>
                     <select class="form-control" id="searchCategory" name="searchCategory">
@@ -88,32 +85,6 @@
             </form>
         </div>
     </div>
-
-                <?php
-                    if ((isset($_GET['actie']) && $_GET['actie'] == 'wis') && (isset($_GET['artikelid'])))
-                    {
-                        $mysqli = new MySQli ("localhost", "root", "", "computershopphp");
-
-                        if(mysqli_connect_errno())
-                        {
-                            trigger_error('fout bij verbinding:' .$mysqli->error);
-                        }
-
-
-                        $sql =
-                            "DELETE 
-                                from tblartikels
-                                WHERE artikelnr = ?";
-
-                        $stmt = $mysqli->prepare($sql);
-                        $stmt->bind_param('i',$artikelnr);
-                        $artikelnr = $_GET["artikelid"];
-                        $stmt->execute();
-                        $stmt->close();
-                        echo "<span class='text-success'>product is gewist</span>";
-                    }
-                ?>
-
                 <?php
                     $mysqli = new MySQLi("localhost", "root", "", "computershopphp");
                     if(isset($_GET['Zoek']))
@@ -132,7 +103,7 @@
                             echo "<div class='row'>";
                             echo '<div class="col-md-8 table-responsive mx-auto">';
                             echo '<h2>Resultaten</h2>';
-                            echo '<br><table class="table table-responsive table-dark table-striped">';
+                            echo '<br><table border="1" class="table table-responsive table-dark table-striped">';
                             echo '<thead>';
                             echo '<tr>';
                             echo '<th scope="col">ArtikelNR</th>';
@@ -142,15 +113,10 @@
                             echo '<th scope="col">Genre</th>';
                             echo '<th scope="col">Omschrijving</th>';
                             echo '<th scope="col">Merk</th>';
-                            echo '<th scope="col"> Wis</th>';
-                            echo '<th scope="col">Update </th>';
                             echo '</tr>';
                             echo '</thead>';
     
-                            while ($stmt->fetch())
-                            {
-                                $teverwijderen = $artikelnr;
-                                $update = $artikelnr;
+                            while ($stmt->fetch()) {
                                 echo "<tr>";
                                 echo "<td>";
                                 echo $artikelnr;
@@ -173,21 +139,6 @@
                                 echo "<td>";
                                 echo $merk;
                                 echo "</td>";
-                                echo "<td>";
-
-                            ?>
-                                <form name="form1" method="post" action="<?php echo$_SERVER['PHP_SELF']?>?actie=wis&artikelid=<?php echo $teverwijderen ; ?> ">
-                                    <input type="submit" class="btn btn-danger" name="wis" id="wis" value="Wis">
-                                </form>
-                            <?php
-                                echo "</td>";
-                                echo '<td>';
-                            ?>
-                                <form name="form2" method="post" action="veranderAf.php?actie=verander&artikelid=<?php echo $update ; ?> ">
-                                    <input type="submit" class="btn btn-success" name="update" id="update" value="Update">
-                                </form>
-                            <?php
-                                echo "</td>";
                                 echo "</tr>";
                             }
     
@@ -205,29 +156,30 @@
                     
                 ?>
  
+ 
 <!-- verwijder code door Rayan -->
 
  <!-- jQuery -->
- <script src="../assets/js/jquery-2.1.0.min.js"></script>
+ <script src="assets/js/jquery-2.1.0.min.js"></script>
 
 <!-- Bootstrap -->
-<script src="../assets/js/popper.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
+<script src="assets/js/popper.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
 
 <!-- Plugins -->
-<script src="../assets/js/owl-carousel.js"></script>
-<script src="../assets/js/accordions.js"></script>
-<script src="../assets/js/datepicker.js"></script>
-<script src="../assets/js/scrollreveal.min.js"></script>
-<script src="../assets/js/waypoints.min.js"></script>
-<script src="../assets/js/jquery.counterup.min.js"></script>
-<script src="../assets/js/imgfix.min.js"></script>
-<script src="../assets/js/slick.js"></script>
-<script src="../assets/js/lightbox.js"></script>
-<script src="../assets/js/isotope.js"></script>
+<script src="assets/js/owl-carousel.js"></script>
+<script src="assets/js/accordions.js"></script>
+<script src="assets/js/datepicker.js"></script>
+<script src="assets/js/scrollreveal.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/imgfix.min.js"></script> 
+<script src="assets/js/slick.js"></script> 
+<script src="assets/js/lightbox.js"></script> 
+<script src="assets/js/isotope.js"></script> 
 
 <!-- Global Init -->
-<script src="../assets/js/custom.js"></script>
+<script src="assets/js/custom.js"></script>
 
 
 </body>
