@@ -116,13 +116,20 @@
                     echo $wachtwoord;
                     echo "</td>";
                     echo "<td>";
-                ?>
-                    <form name="form1" method="post" action="<?php echo$_SERVER['PHP_SELF']?>?actie=wis&klantid=<?php echo $teverwijderen ; ?> ">
-                        <input type="submit" class="btn btn-danger" name="wis" id="wis" value="Wis">
-                    </form>
-                <?php
-                    echo "</td>";
-                    echo "</tr>";
+                    ?>
+                        <form name="form1" method="post" action="<?php echo$_SERVER['PHP_SELF']?>?actie=wis&klantid=<?php echo $teverwijderen ; ?> ">
+                            <input type="submit" class="btn btn-danger" name="wis" id="wis" value="Wis">
+                        </form>
+                    <?php
+                        echo "</td>";
+                        echo "<td>";
+                    ?>
+                        <form name="form2" method="post" action="veranderKlanten.php?actie=verander&klantid=<?php echo $update ; ?> ">
+                            <input type="submit" class="btn btn-success" name="update" id="update" value="Update">
+                        </form>
+                    <?php
+                        echo "</td>";
+                        echo "</tr>";
                 }
                 echo "</table>";
                 echo "</div>";
