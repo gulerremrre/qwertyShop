@@ -10,7 +10,7 @@ if (isset($_GET['klantid']))
 
 if (isset($_POST["Verander"])) 
 {
-    $update = $_POST["klantid"];
+    $update = isset($_POST["klantid"]) ? $_POST["klantid"] : null;
 }
 $mysqli = new MySqli("localhost", "root", "", "computershopphp");
 
@@ -49,16 +49,15 @@ if (isset($_POST["Verander"]))
             $postcodeid = $_POST["postcodeid"];
             $email = $_POST["email"];
             $wachtwoord = $_POST["wachtwoord"];
-            $stmt->bind_param('issssss', $klantnr,$klantvoornaam,$klantachternaam, $telefoon, $postcodeid, $email, $wachtwoord);
-
-            if ($stmt->execute())
-            {
+            $stmt->bind_param('ssssssi',$klantvoornaam,$klantachternaam, $telefoon, $postcodeid, $email, $wachtwoord, $klantnr);
+            if ($stmt->execute()) {
                 header("location:alleKlanten.php");
             }
-            else 
+            else
             {
                 echo '<p class="text-danger">Error: ' . $stmt->error . '</p>';
             }
+
             $stmt->close();
         } 
         
