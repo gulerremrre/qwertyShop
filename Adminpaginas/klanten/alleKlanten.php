@@ -24,6 +24,39 @@
 </head>
 <body>
 
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="../../index.html" >Home</a></li>
+                        <li class="scroll-to-section"><a href="../../gamingpc.html">Pc's</a></li>
+                        <li class="scroll-to-section"><a href="../../gaminglaptop.html">Laptops</a></li>
+
+                        <li class="submenu">
+                            <a href="javascript:">components</a>
+                            <ul>
+                                <li><a href="../../cpu.html">CPU</a></li>
+                                <li><a href="../../gpu.html">GPU</a></li>
+                                <li><a href="../../products.html">SSD</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:">Pages</a>
+                        </li>
+                        <li class="scroll-to-section"><a href="../../login.html">login</a></li>
+                        <li class="scroll-to-section"><a href="alleKlanten.php">Admin</a></li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
 
 
     <!-- verwijder code door Rayan -->
