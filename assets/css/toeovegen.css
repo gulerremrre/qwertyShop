@@ -1,0 +1,10 @@
+body
+{
+    height: calc(100vh);
+    background-color: #b0f0e7;
+}
+
+.admin
+{
+    background-color: #53aa9f;
+}

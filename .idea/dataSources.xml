@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="computershopphp@localhost" uuid="e24eb7cd-e85f-4325-87c6-e98e1f90484d">
+    <data-source source="LOCAL" name="computershopphp" uuid="e24eb7cd-e85f-4325-87c6-e98e1f90484d">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <remarks>jaarproject</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/computershopphp</jdbc-url>
+      <jdbc-url>jdbc:mysql://127.0.0.1:1111/computershopphp</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

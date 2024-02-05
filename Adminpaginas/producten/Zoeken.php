@@ -11,16 +11,16 @@
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/font-awesome.css">
 
-    <link rel="stylesheet" href="../assets/css/templatemo-hexashop.css">
+    <link rel="stylesheet" href="../../assets/css/templatemo-hexashop.css">
 
-    <link rel="stylesheet" href="../assets/css/owl-carousel.css">
+    <link rel="stylesheet" href="../../assets/css/owl-carousel.css">
 
-    <link rel="stylesheet" href="../assets/css/lightbox.css">
-    <link rel="stylesheet" href="../assets/css/zoeken.css">
+    <link rel="stylesheet" href="../../assets/css/lightbox.css">
+    <link rel="stylesheet" href="../../assets/css/update.css">
 </head>
 
 <body>
@@ -31,22 +31,22 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="../index.html" >Home</a></li>
-                            <li class="scroll-to-section"><a href="../gamingpc.html">Pc's</a></li>
-                            <li class="scroll-to-section"><a href="../gaminglaptop.html">Laptops</a></li>
+                            <li class="scroll-to-section"><a href="../../index.html" >Home</a></li>
+                            <li class="scroll-to-section"><a href="../../gamingpc.html">Pc's</a></li>
+                            <li class="scroll-to-section"><a href="../../gaminglaptop.html">Laptops</a></li>
 
                             <li class="submenu">
                                 <a href="javascript:">components</a>
                                 <ul>
-                                    <li><a href="../cpu.html">CPU</a></li>
-                                    <li><a href="../gpu.html">GPU</a></li>
-                                    <li><a href="../products.html">SSD</a></li>
+                                    <li><a href="../../cpu.html">CPU</a></li>
+                                    <li><a href="../../gpu.html">GPU</a></li>
+                                    <li><a href="../../products.html">SSD</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
                                 <a href="javascript:">Pages</a>
                             </li>
-                            <li class="scroll-to-section"><a href="../login.html">login</a></li>
+                            <li class="scroll-to-section"><a href="../../login.html">login</a></li>
                             <li class="scroll-to-section"><a href="alleProducten.php">Admin</a></li>
                         </ul>        
                         <a class='menu-trigger'>
@@ -208,26 +208,26 @@
 <!-- verwijder code door Rayan -->
 
  <!-- jQuery -->
- <script src="../assets/js/jquery-2.1.0.min.js"></script>
+ <script src="../../assets/js/jquery-2.1.0.min.js"></script>
 
 <!-- Bootstrap -->
-<script src="../assets/js/popper.js"></script>
-<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../../assets/js/popper.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
 
 <!-- Plugins -->
-<script src="../assets/js/owl-carousel.js"></script>
-<script src="../assets/js/accordions.js"></script>
-<script src="../assets/js/datepicker.js"></script>
-<script src="../assets/js/scrollreveal.min.js"></script>
-<script src="../assets/js/waypoints.min.js"></script>
-<script src="../assets/js/jquery.counterup.min.js"></script>
-<script src="../assets/js/imgfix.min.js"></script>
-<script src="../assets/js/slick.js"></script>
-<script src="../assets/js/lightbox.js"></script>
-<script src="../assets/js/isotope.js"></script>
+<script src="../../assets/js/owl-carousel.js"></script>
+<script src="../../assets/js/accordions.js"></script>
+<script src="../../assets/js/datepicker.js"></script>
+<script src="../../assets/js/scrollreveal.min.js"></script>
+<script src="../../assets/js/waypoints.min.js"></script>
+<script src="../../assets/js/jquery.counterup.min.js"></script>
+<script src="../../assets/js/imgfix.min.js"></script>
+<script src="../../assets/js/slick.js"></script>
+<script src="../../assets/js/lightbox.js"></script>
+<script src="../../assets/js/isotope.js"></script>
 
 <!-- Global Init -->
-<script src="../assets/js/custom.js"></script>
+<script src="../../assets/js/custom.js"></script>
 
 
 </body>
