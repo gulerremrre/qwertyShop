@@ -72,7 +72,7 @@
                 echo '<div class="container pt-5 mt-5">';
                 echo '<div class="card admin">';
                 echo '<div class="card-body card-responsive">';
-                echo "<h2 class='card-header'> alle Klanten <a href='toevoegenKlanten.php'><input type='submit' class='btn btn-primary' value='Zoek'></a> <a href=''><input type='submit' class='btn btn-info' value='Toevoegen'></a></h2>";
+                echo "<h2 class='card-header'> alle Klanten <a href='ZoekenKlanten.php'><input type='submit' class='btn btn-primary' value='Zoek'></a> <a href='toevoegenKlanten.php'><input type='submit' class='btn btn-info' value='Toevoegen'></a></h2>";
                 echo '<div class="card-text">';
                 echo '<br><table  class="table table-bordered table-dark table-striped table-responsive">';
                 echo '<thead>';

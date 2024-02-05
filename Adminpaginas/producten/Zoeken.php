@@ -64,10 +64,7 @@
     <div class="row">
         <div class="col-md-8 mx-auto">
             <h2>Zoeken</h2>
-            <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>" name="searchForm" class="bg-info
-
-
-             rounded p-3">
+            <form method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>" name="searchForm" class="bg-info rounded p-3">
                 <div class="form-group">
                     <label for="searchCategory">Selecteer zoekcategorie:</label>
                     <select class="form-control" id="searchCategory" name="searchCategory">
