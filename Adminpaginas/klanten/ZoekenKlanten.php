@@ -102,7 +102,7 @@
             $stmt = $mysqli->prepare($sql);
             $stmt->bind_param("s", $zoekWaarde);
             $stmt->execute();
-            $stmt->bind_result($klantnr,$klantvoornaam, $klantachternaam, $telefoon, $postcodeID, $email, $wachtwoord);
+            $stmt->bind_result($klantnr,$klantvoornaam, $klantachternaam, $telefoon, $postcodeid, $email, $wachtwoord);
 
             echo '<div class="container pt-5 mt-5">';
             echo '<div class="card admin">';
@@ -142,7 +142,7 @@
                 echo $telefoon;
                 echo "</td>";
                 echo "<td>";
-                echo $postcodeID;
+                echo $postcodeid;
                 echo "</td>";
                 echo "<td>";
                 echo $email;

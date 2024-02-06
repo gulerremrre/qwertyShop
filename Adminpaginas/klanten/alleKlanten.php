@@ -101,7 +101,7 @@
                 $stmt = $mysqli->prepare($sql);
                 $stmt->execute();
 
-                $stmt->bind_result($klantnr, $klantvoornaam, $klantachternaam, $telefoon, $postcodeID, $email, $wachtwoord, $adres);
+                $stmt->bind_result($klantnr, $klantvoornaam, $klantachternaam, $telefoon, $postcodeid, $email, $wachtwoord, $adres);
                 echo '<div class="container pt-5 mt-5">';
                 echo '<div class="card admin">';
                 echo '<div class="card-body card-responsive">';
@@ -142,7 +142,7 @@
                     echo $telefoon;
                     echo "</td>";
                     echo "<td>";
-                    echo $postcodeID;
+                    echo $postcodeid;
                     echo "</td>";
                     echo "<td>";
                     echo $email;
