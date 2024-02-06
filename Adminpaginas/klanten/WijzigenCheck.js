@@ -67,6 +67,17 @@ function wijzig(){
         document.getElementById("wachtwoordongeldig").innerHTML = "";
     }
 
+    if(document.getElementById("adres").value === "")
+    {
+        document.getElementById("adresongeldig").innerHTML = "geef in een adres";
+    }
+    else
+    {
+        document.getElementById("adresongeldig").innerHTML = "";
+        ok = false;
+    }
+
+
     if(ok === true)
     {
         document.formtoevoegen.submit();

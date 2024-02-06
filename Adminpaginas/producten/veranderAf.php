@@ -127,7 +127,7 @@ if (isset($_POST["Verander"])) {
                                 <a href="javascript:">Pages</a>
                             </li>
                             <li class="scroll-to-section"><a href="../../login.html">login</a></li>
-                            <li class="scroll-to-section"><a href="alleProducten.php">Admin</a></li>
+                            <li class="scroll-to-section"><a href="../adminMain.html">Admin</a></li>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>

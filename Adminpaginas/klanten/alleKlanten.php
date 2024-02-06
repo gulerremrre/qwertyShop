@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../../assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="../../assets/css/lightbox.css">
-    <link rel="stylesheet" href="../../assets/css/zoeken.css">
+    <link rel="stylesheet" href="../../assets/css/update.css">
 </head>
 <body>
 
@@ -46,7 +46,7 @@
                             <a href="javascript:">Pages</a>
                         </li>
                         <li class="scroll-to-section"><a href="../../login.html">login</a></li>
-                        <li class="scroll-to-section"><a href="alleKlanten.php">Admin</a></li>
+                        <li class="scroll-to-section"><a href="../adminMain.html">Admin</a></li>
                     </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -101,7 +101,7 @@
                 $stmt = $mysqli->prepare($sql);
                 $stmt->execute();
 
-                $stmt->bind_result($klantnr, $klantvoornaam, $klantachternaam, $telefoon, $postcodeID, $email, $wachtwoord);
+                $stmt->bind_result($klantnr, $klantvoornaam, $klantachternaam, $telefoon, $postcodeID, $email, $wachtwoord, $adres);
                 echo '<div class="container pt-5 mt-5">';
                 echo '<div class="card admin">';
                 echo '<div class="card-body card-responsive">';
@@ -117,8 +117,10 @@
                 echo '<th scope="col" >PostcodeID</th>';
                 echo '<th scope="col" >E-mail</th>';
                 echo '<th scope="col" >wachtwoord</th>';
+                echo '<th scope="col" >Adres</th>';
                 echo '<th scope="col" >Wissen</th>';
                 echo '<th scope="col" >Update</th>';
+
 
                 echo '</thead>';
 
@@ -147,6 +149,9 @@
                     echo "</td>";
                     echo "<td>";
                     echo $wachtwoord;
+                    echo "</td>";
+                    echo "<td>";
+                    echo $adres;
                     echo "</td>";
                     echo "<td>";
                     ?>

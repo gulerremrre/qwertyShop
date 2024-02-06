@@ -23,7 +23,7 @@ $sql = "SELECT * FROM tblklanten WHERE klantnr = ?";
 $stmt = $mysqli->prepare($sql);
 $stmt->bind_param("i", $update);
 $stmt->execute();
-$stmt->bind_result($klantnr, $klantvoornaam, $klantachternaam, $telefoon, $postcodeid, $email, $wachtwoord);
+$stmt->bind_result($klantnr, $klantvoornaam, $klantachternaam, $telefoon, $postcodeid, $email, $wachtwoord, $adres);
 $stmt->fetch();
 
 $stmt->close();
@@ -38,7 +38,7 @@ if (isset($_POST["Verander"]))
         $Error = "";
 
 
-        $sql = "UPDATE tblklanten SET klantvoornaam = ?, klantachternaam = ?, telefoon = ?, postcodeID = ?, email = ?, wachtwoord = ? WHERE klantnr = ?";
+        $sql = "UPDATE tblklanten SET klantvoornaam = ?, klantachternaam = ?, telefoon = ?, postcodeID = ?, email = ?, wachtwoord = ?, adres = ? WHERE klantnr = ?";
         if ($stmt = $mysqli->prepare($sql))
         {
 
@@ -49,7 +49,8 @@ if (isset($_POST["Verander"]))
             $postcodeid = $_POST["postcodeid"];
             $email = $_POST["email"];
             $wachtwoord = $_POST["wachtwoord"];
-            $stmt->bind_param('ssssssi',$klantvoornaam,$klantachternaam, $telefoon, $postcodeid, $email, $wachtwoord, $klantnr);
+            $adres = $_POST["adres"];
+            $stmt->bind_param('sssssssi',$klantvoornaam,$klantachternaam, $telefoon, $postcodeid, $email, $wachtwoord, $adres, $klantnr);
             if ($stmt->execute()) {
                 header("location:alleKlanten.php");
             }
@@ -99,10 +100,18 @@ if (isset($_POST["Verander"]))
     <link rel="stylesheet" href="../../assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="../../assets/css/lightbox.css">
-    <link rel="stylesheet" href="../../assets/css/update.css">
+    <link rel="stylesheet" href="../../assets/css/alleproducten.css">
+    <script src="veranderenCheck.js"></script>
+
+    <style>
+        .fout {
+            color: #F00;
+        }
+    </style>
 </head>
 
 <body>
+
 
     <!-- nav -->
     <header class="header-area header-sticky">
@@ -127,7 +136,7 @@ if (isset($_POST["Verander"]))
                                 <a href="javascript:">Pages</a>
                             </li>
                             <li class="scroll-to-section"><a href="../../login.html">login</a></li>
-                            <li class="scroll-to-section"><a href="../producten/alleProducten.php">Admin</a></li>
+                            <li class="scroll-to-section"><a href="../adminMain.html">Admin</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -138,50 +147,57 @@ if (isset($_POST["Verander"]))
             </div>
         </div>
     </header>
-
-    <!-- nav -->
-
     <!-- form -->
 
     <div class="container pt-3 mt-5">
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <h2 class="mt-5">Veranderen</h2>
-                <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="bg-info rounded p-3 admin">
+                <form method="post" name="formverander" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="bg-info rounded p-3 admin">
                     <div class="form-group">
                         <label for="klantnr">KlantNR:</label>
                         <input type="text" class="form-control" id="klantnr" name="klantnr" required value="<?php echo $klantnr; ?>">
+
                     </div>
                     <div class="form-group">
                         <label for="voornaam">Voornaam:</label>
-                        <input type="text" class="form-control" id="voornaam" name="voornaam" required value="<?php echo $klantvoornaam; ?>">
-
+                        <input type="text" class="form-control" id="voornaam" name="voornaam"  required value="<?php echo $klantvoornaam; ?>">
+                        <label id="klantvoornaamongeldig" class="fout"></label>
                     </div>
                     <div class="form-group">
                         <label for="achternaam">Achternaam:</label>
-                        <input type="text" class="form-control" id="achternaam" name="achternaam" required value="<?php echo $klantachternaam; ?>">
-
+                        <input type="text" class="form-control" id="achternaam" name="achternaam" required  value="<?php echo $klantachternaam; ?>">
+                        <label id="klantachternaamongeldig" class="fout"></label>
                     </div>
                     <div class="form-group">
                         <label for="telefoon">Telefoon:</label>
-                        <input type="text" class="form-control" id="telefoon" name="telefoon" required value="<?php echo $telefoon; ?>">
+                        <input type="text" class="form-control" id="telefoon" name="telefoon" required  value="<?php echo $telefoon; ?>">
+                        <label id="telefoonongeldig" class="fout"></label>
 
                     </div>
                     <div class="form-group">
                         <label for="postcodeid">PostcodeID:</label>
-                        <input type="text" class="form-control" id="postcodeid" name="postcodeid" value="<?php echo $postcodeid; ?>">
+                        <input type="text" class="form-control" id="postcodeid" name="postcodeid" required value="<?php echo $postcodeid; ?>">
+                        <label id="postcodeongeldig" class="fout"></label>
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail:</label>
-                        <input type="text" class="form-control" id="email" name="email" value="<?php echo $email; ?>">
+                        <input type="email" class="form-control" id="email" name="email" required value="<?php echo $email; ?>">
+                        <label id="emailongeldig" class="fout"></label>
 
                     </div>
                     <div class="form-group">
                         <label for="wachtwoord">Wachtwoord:</label>
-                        <input type="text" class="form-control" id="wachtwoord" name="wachtwoord" value="<?php echo $wachtwoord; ?>">
-
+                        <input type="password" class="form-control" id="wachtwoord" name="wachtwoord" required value="<?php echo $wachtwoord; ?>">
+                        <label id="wachtwoordongeldig" class="fout"></label>
                     </div>
-                    <button type="submit" name="Verander" id="Verander" class="btn btn-primary">Verander</button>
+                    <div class="form-group">
+                        <label for="adres">Adres:</label>
+                        <input type="text" class="form-control" id="adres"  name="adres" required value="<?php echo $adres ?>">
+                        <label id="adresongeldig" class="fout"></label>
+                    </div>
+                    <input type="submit" name="Verander" id="Verander" class="btn btn-primary" value="verander" onclick="wijzig()" />
+
                     <label> <?php echo $Error; ?></label>
 
                 </form>

@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" href="../../assets/css/lightbox.css">
 
-    <link rel="stylesheet" href="../../assets/css/toeovegen.css">
+    <link rel="stylesheet" href="../../assets/css/update.css">
 
     <script src="WijzigenCheck.js"></script>
 
@@ -44,16 +44,17 @@
         if ((isset($_POST['klantvoornaamtoe'])) && ($_POST['klantvoornaamtoe']) != "")
         {
              
-            $sql = "INSERT INTO tblklanten (klantvoornaam, klantachternaam, telefoon, postcodeID, email, wachtwoord) VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO tblklanten (klantvoornaam, klantachternaam, telefoon, postcodeID, email, wachtwoord, adres) VALUES (?, ?, ?, ?, ?, ?, ?)";
             $stmt = $mysqli->prepare($sql);
         
-            $stmt->bind_param('ssssss', $voornaam, $achternaam, $telefoon, $postcodeid, $email, $wachtwoord);
+            $stmt->bind_param('ssssss', $voornaam, $achternaam, $telefoon, $postcodeid, $email, $wachtwoord, $adres);
             $voornaam = $_POST['klantvoornaamtoe'];
             $achternaam = $_POST['klantachternaam'];
             $telefoon = $_POST["telefoon"];
             $postcodeid = $_POST['postcode'];
             $email = $_POST['email'];
             $wachtwoord = $_POST['wachtwoord'];
+            $adres = $_POST['adres'];
 
 
             if ($stmt->execute())
@@ -100,8 +101,8 @@
                                 <a href="javascript:">Pages</a>
                             </li>
                             <li class="scroll-to-section"><a href="../../login.html">login</a></li>
-                            <li class="scroll-to-section"><a href="alleKlanten.php">Admin</a></li>
-                        </ul>        
+                            <li class="scroll-to-section"><a href="../adminMain.html">Admin</a></li>
+                        </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
@@ -144,13 +145,18 @@
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail:</label>
-                    <input type="text" class="form-control" id="email" required name="email">
+                    <input type="email" class="form-control" id="email" required name="email">
                     <label id="emailongeldig" class="fout"></label>
                 </div>
                 <div class="form-group">
                     <label for="wachtwoord">Wachtwoord:</label>
-                    <input type="text" class="form-control" id="wachtwoord" required name="wachtwoord">
+                    <input type="password" class="form-control" id="wachtwoord" required name="wachtwoord">
                     <label id="wachtwoordongeldig" class="fout"></label>
+                </div>
+                <div class="form-group">
+                    <label for="adres">Adres:</label>
+                    <input type="text" class="form-control" id="adres" required name="adres">
+                    <label id="adresongeldig" class="fout"></label>
                 </div>
 
 

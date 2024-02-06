@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../../assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="../../assets/css/lightbox.css">
-    <link rel="stylesheet" href="../../assets/css/adminncss.css">
+    <link rel="stylesheet" href="../../assets/css/alleproducten.css">
 </head>
 <body>
 
@@ -46,7 +46,7 @@
                                 <a href="javascript:">Pages</a>
                             </li>
                             <li class="scroll-to-section"><a href="../../login.html">login</a></li>
-                            <li class="scroll-to-section"><a href="alleProducten.php">Admin</a></li>
+                            <li class="scroll-to-section"><a href="../adminMain.html">Admin</a></li>
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>

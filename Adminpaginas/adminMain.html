@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>alleProducten</title>
+    <title>mainAdmin</title>
 
 
     <!-- Additional CSS Files -->
@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="../assets/css/owl-carousel.css">
 
     <link rel="stylesheet" href="../assets/css/lightbox.css">
-    <link rel="stylesheet" href="../assets/css/admincss.css">
+    <link rel="stylesheet" href="../assets/css/toeovegen.css">
 </head>
-<body>
+<body class="bg-color">
 
 <header class="header-area header-sticky">
         <div class="container">
@@ -58,7 +58,36 @@
         </div>
     </header>
 
-
+    <div class="container">
+        <div class="row pt-4 mt-5">
+            <div class = "col">
+                <div class=" admin jumbotron bg-color border text-center m-3">
+                    <h1><b>Kies tabel</b></h1>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="row no-gutters justify-content-center">
+            <!-- First Column -->
+            <div class="col-md-6 col-12 d-flex align-items-center justify-content-center">
+                <div class="view overlay zoom">
+                    <img src="../assets/images/klantjuist.png" alt="" class="img-fluid">
+                    <div class="mask flex-center text-center">
+                        <a href="klanten/alleKlanten.php"><h2>klanten</h2></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Second Column -->
+            <div class="col-md-6 col-12 d-flex align-items-center justify-content-center">
+                <div class="view overlay zoom">
+                    <img src="../assets/images/producticon.png" alt="" class="img-fluid">
+                    <div class="text-center">
+                        <a href="producten/alleProducten.php"><h2>Producten</h2></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
  <!-- jQuery -->
  <script src="../assets/js/jquery-2.1.0.min.js"></script>
