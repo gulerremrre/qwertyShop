@@ -89,6 +89,13 @@ if (isset($_POST["Verander"])) {
 
     <link rel="stylesheet" href="../../assets/css/lightbox.css">
     <link rel="stylesheet" href="../../assets/css/update.css">
+    <script src="verandercheckproduct.js"></script>
+
+    <style>
+        .fout {
+            color: #F00;
+        }
+    </style>
 </head>
 
 <body>
@@ -139,16 +146,18 @@ if (isset($_POST["Verander"])) {
                 <div class="form-group">
                     <label for="productid">ArtikelNR:</label>
                     <input type="text" class="form-control" id="productid" name="productid" required value="<?php echo $artikelnr; ?>">
+                    <label id="productidongeldig" class="fout"></label>
                 </div>
                 <div class="form-group">
                     <label for="productnaam">ArtikelNaam:</label>
                     <input type="text" class="form-control" id="productnaam" name="productnaam" required value="<?php echo $artikelnaam; ?>">
+                    <label id="productnaamongeldig" class="fout"></label>
 
                 </div>
                 <div class="form-group">
                     <label for="productkorting">Korting:</label>
                     <input type="text" class="form-control" id="productkorting" name="productkorting" required value="<?php echo $korting; ?>">
-
+                    <label id="kortingongeldig" class="fout"></label>
                 </div>
                 <div class="form-group">
                     <label for="Prijs">Prijs:</label>
@@ -179,10 +188,12 @@ if (isset($_POST["Verander"])) {
 
                         ?>
                     </select>
+                    <label id="merkongeldig" class="fout"></label>
                 </div>
                 <div class="form-group">
                     <label for="Omschrijving">Omschrijving:</label>
                     <input type="text" class="form-control" id="Omschrijving" name="Omschrijving" value="<?php echo $omschrijving; ?>">
+                    <label id="omschrijvingongeldig" class="fout"></label>
 
                 </div>
                 <div class="form-group">
@@ -208,9 +219,9 @@ if (isset($_POST["Verander"])) {
                         ?>
 
                     </select>
-
+                    <label id="genreongeldig" class="fout"></label>
                 </div>
-                <button type="submit" name="Verander" id="Verander" class="btn btn-primary">Verander</button>
+                <input type="submit" name="Verander" value="Verander" id="Verander" class="btn btn-primary" onclick="wijzig()">
                 <label> <?php echo $Error; ?></label>
 
             </form>
