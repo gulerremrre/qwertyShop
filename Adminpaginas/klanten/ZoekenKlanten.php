@@ -116,7 +116,7 @@
             echo '<th scope="col" >Voornaam</th>';
             echo '<th scope="col" >Achternaam</th>';
             echo '<th scope="col" >Telefoon</th>';
-            echo '<th scope="col" >PostcodeID</th>';
+            echo '<th scope="col" >Postcode</th>';
             echo '<th scope="col" >E-mail</th>';
             echo '<th scope="col" >wachtwoord</th>';
             echo '<th scope="col" >adres</th>';

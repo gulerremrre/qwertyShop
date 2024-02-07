@@ -228,7 +228,7 @@
                     <label id="telefoonongeldig" class="fout"></label>
                 </div>
                 <div class="form-group">
-                    <label for="postcode">PostcodeID:</label>
+                    <label for="postcode">Postcode:</label>
                     <input type="text" class="form-control" id="postcode" required name="postcode">
                     <label id="postcodeongeldig" class="fout"></label>
                 </div>

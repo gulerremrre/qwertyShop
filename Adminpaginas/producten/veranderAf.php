@@ -145,7 +145,7 @@ if (isset($_POST["Verander"])) {
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="bg-info rounded p-3 admin">
                 <div class="form-group">
                     <label for="productid">ArtikelNR:</label>
-                    <input type="text" class="form-control" id="productid" name="productid" required value="<?php echo $artikelnr; ?>">
+                    <input type="text" class="form-control" id="productid" readonly name="productid" required value="<?php echo $artikelnr; ?>">
                     <label id="productidongeldig" class="fout"></label>
                 </div>
                 <div class="form-group">

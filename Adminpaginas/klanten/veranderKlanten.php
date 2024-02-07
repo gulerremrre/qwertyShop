@@ -156,7 +156,7 @@ if (isset($_POST["Verander"]))
                 <form method="post" name="formverander" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="bg-info rounded p-3 admin">
                     <div class="form-group">
                         <label for="klantnr">KlantNR:</label>
-                        <input type="text" class="form-control" id="klantnr" name="klantnr" required value="<?php echo $klantnr; ?>">
+                        <input type="text" class="form-control" id="klantnr" readonly name="klantnr" required value="<?php echo $klantnr; ?>">
 
                     </div>
                     <div class="form-group">
@@ -176,7 +176,7 @@ if (isset($_POST["Verander"]))
 
                     </div>
                     <div class="form-group">
-                        <label for="postcodeid">PostcodeID:</label>
+                        <label for="postcodeid">Postcode:</label>
                         <input type="text" class="form-control" id="postcodeid" name="postcodeid" required value="<?php echo $postcodeid; ?>">
                         <label id="postcodeongeldig" class="fout"></label>
                     </div>
