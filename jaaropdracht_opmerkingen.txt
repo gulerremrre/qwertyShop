@@ -1,0 +1,12 @@
+Jaaropdracht: dingen die moeten veranderen
+
+
+Spelfouten en invoegfouten in de ppt
+Tblpostcodes toevoegen, relaties tonen in ppt
+Merk moet Merkid worden in tblmerken //klaar 
+Merken alfabetisch vertonen in keuzelijst met “Order By” (ook voor genres) //klaar
+Gegevens mogen NIET verwijderd worden
+Toevoegen werkt niet bij klanten // klaar
+Zoekfunctie klanten werkt niet //klaar
+Klant en productid moet “read only” zijn //klaar
+Wachtwoorden mogen niet zichtbaar zijn
