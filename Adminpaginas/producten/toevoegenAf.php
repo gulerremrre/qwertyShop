@@ -143,7 +143,7 @@
                     <select name="merktoe" id="merktoe" class="form-control">
                             <option value="" selected>Select Merk</option>
                             <?php
-                            $sql = "SELECT merk FROM tblmerk ";
+                            $sql = "SELECT merk FROM tblmerk ORDER BY merk ASC ";
 
                             if ($stmt = $mysqli->prepare($sql))
                             {
@@ -179,7 +179,7 @@
                     <select name="genretoe" id="genretoe" class="form-control">
                             <option value="" selected>Select Genre</option>
                             <?php
-                                $sql = "SELECT genre FROM tblgenre";
+                                $sql = "SELECT genre FROM tblgenre ORDER BY genre ASC";
 
                                 if ($stmt = $mysqli->prepare($sql))
                                 {

@@ -70,11 +70,12 @@ function wijzig()
     if(document.getElementById("adres").value === "")
     {
         document.getElementById("adresongeldig").innerHTML = "geef in een adres";
+        ok = false;
     }
     else
     {
         document.getElementById("adresongeldig").innerHTML = "";
-        ok = false;
+
     }
 
     if(ok === true)

@@ -169,7 +169,7 @@ if (isset($_POST["Verander"])) {
                     <select name="merk" id="merk" class="form-control">
                         <option value="" selected><?php echo $merk; ?></option>
                         <?php
-                        $sql = "SELECT merk FROM tblmerk ";
+                        $sql = "SELECT merk FROM tblmerk ORDER BY merk ASC ";
 
                         if ($stmt = $mysqli->prepare($sql)) {
                             if (!$stmt->execute()) {
@@ -201,7 +201,7 @@ if (isset($_POST["Verander"])) {
                     <select name="Genre" id="Genre" class="form-control">
                         <option value="" selected><?php echo $genreid; ?></option>
                         <?php
-                        $sql = "SELECT genre FROM tblgenre";
+                        $sql = "SELECT genre FROM tblgenre ORDER BY genre ASC";
 
                         if ($stmt = $mysqli->prepare($sql)) {
                             if (!$stmt->execute()) {
