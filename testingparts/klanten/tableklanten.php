@@ -26,6 +26,31 @@
         </nav>
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
+                <nav class="navbar navbar-expand bg-white shadow mb-4 topbar static-top navbar-light">
+                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                        <form class="d-none d-sm-inline-block me-auto ms-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group"></div>
+                        </form>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                                    <form class="me-auto navbar-search w-100">
+                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a class="nav-link link-dark" href="#">Home</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Pc's</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Laptop</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Components</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Pages</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Login</a></li>
+                            <li class="nav-item"><a class="nav-link link-dark" href="#">Admin</a></li>
+                        </ul>
+                    </div>
+                </nav>
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">Alle Klanten</h3>
                     <div class="card shadow">
