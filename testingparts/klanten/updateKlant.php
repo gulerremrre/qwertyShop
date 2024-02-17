@@ -15,7 +15,6 @@
         if (isset($_GET['klantid']))
         {
             $update = $_GET['klantid'];
-            echo "klantnr: " . $update;
         }
 
         $mysqli = new MySQLi("localhost", "root", "", "computershopphp");
