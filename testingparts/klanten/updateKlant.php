@@ -15,6 +15,7 @@
         if (isset($_GET['klantid']))
         {
             $update = $_GET['klantid'];
+            echo "klantnr: " . $update;
         }
 
         $mysqli = new MySQLi("localhost", "root", "", "computershopphp");
@@ -34,14 +35,14 @@
 
     $Error = "";
 
-    if ((isset($_POST["voegToe"])))
+    if ((isset($_POST["voegtoe"])))
     {
-        $klantnr = $update;
-        echo test;
+
+        echo "echo is being submitted";
         $sql = "UPDATE tblklanten SET klantvoornaam = ?, klantachternaam = ?, telefoon = ?, postcodeid = ?, email = ?, wachtwoord = ?, adres = ? WHERE klantnr = ?";
         if ($stmt = $mysqli->prepare($sql))
         {
-
+            $klantid = $_POST["klantid"];
             $klantvoornaam = $_POST["klantvoornaam"];
             $klantachternaam = $_POST["klantachternaam"];
             $telefoon = $_POST["telefoon"];
@@ -49,10 +50,11 @@
             $email = $_POST["email"];
             $wachtwoord = $_POST["wachtwoord"];
             $adres = $_POST["adres"];
-            $stmt->bind_param('sssssssi',$klantvoornaam,$klantachternaam, $telefoon, $postcodeid, $email, $wachtwoord, $adres, $klantnr);
+
+            $stmt->bind_param('sssssssi',$klantvoornaam,$klantachternaam, $telefoon, $postcodeid, $email, $wachtwoord, $adres, $klantid);
             if ($stmt->execute())
             {
-                header("location:tableklanten.php");
+                header('Location: tableklanten.php');
             }
             else
             {
@@ -67,7 +69,6 @@
         }
 
 
-        $stmt->close();
 
     }
     ?>
@@ -104,9 +105,9 @@
                                     </form>
                                 </div>
                             </li>
-                            <li class="nav-item"><a class="nav-link link-dark" href="#">Home</a></li>
-                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Pc's</a></li>
-                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Laptop</a></li>
+                            <li class="nav-item"><a class="nav-link link-dark" href="../../index.html">Home</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="../../gamingpc.html">Pc's</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="../../gaminglaptop.html">Laptop</a></li>
                             <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Components</a></li>
                             <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Pages</a></li>
                             <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Login</a></li>
@@ -139,6 +140,7 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <div class="mb-3">
+                                                            <input type="hidden" name="klantid" value="<?php echo $update; ?>">
                                                             <label class="form-label" for="klantvoornaam"><strong>klantvoornaam:</strong></label>
                                                             <input class="form-control" id="klantvoornaam" type="text" name="klantvoornaam" value="<?php echo $klantvoornaam_update; ?>">
                                                             <label id="voornaamongeldig" class="text-danger"></label>
@@ -217,7 +219,7 @@
                                                             <input class="form-control" type="text" id="adres" name="adres" value="<?php echo $adres_update; ?>">
                                                             <label id="adresongeldig" class="text-danger"></label>
                                                         </div>
-                                                        <input type="submit" name="voegtoe" id="voegToe" value="voegToe" class="btn btn-primary">
+                                                        <input type="submit" name="voegtoe" id="voegtoe" value="voegtoe" class="btn btn-primary" onclick="wijzig(event)">
                                                     </div>
                                                 </div>
                                             </div>
