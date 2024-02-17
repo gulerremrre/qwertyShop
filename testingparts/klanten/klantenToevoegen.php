@@ -58,7 +58,6 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light navbar-collapse" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link active" href="tableklanten.php"><span>Alle Klanten</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span>Update Klanten</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="klantenToevoegen.php">Toevoegen Klanten</a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
