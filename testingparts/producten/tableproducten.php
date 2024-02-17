@@ -61,10 +61,12 @@
                                         echo "<th>Genre</th>";
                                         echo "<th>Merk</th>";
                                         echo "<th>Omschrijving</th>";
+                                        echo "<th> Update</th>";
                                         echo "</tr>";
                                         echo "</thead>";
                                         while($stmt->fetch())
                                         {
+                                            $update = $productid;
                                             echo "<tbody>";
                                             echo "<tr>";
                                             echo "<td>" . $productid . "</td>";
@@ -74,6 +76,13 @@
                                             echo "<td>" . $genre . "</td>";
                                             echo "<td>" . $merk . "</td>";
                                             echo "<td>" . $omschrijving . "</td>";
+                                            echo "<td>"
+                                            ?>
+                                            <form name="form2" method="post" action="updateProducten.php?actie=verander&artikelid=<?php echo $update ; ?> ">
+                                                <input type="submit" class="btn btn-success" name="update" id="update" value="Update">
+                                            </form>
+                                            <?php
+                                            echo "</td>";
                                             echo "</tr>";
                                             echo "</tbody>";
                                         }
