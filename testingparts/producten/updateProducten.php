@@ -70,8 +70,7 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light navbar-collapse" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link active" href="tableproducten.php"><span>Alle Producten</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="../register.html"><span>Update producten</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Toevoegen Producten</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productenToevoegen.php">Toevoegen Producten</a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>

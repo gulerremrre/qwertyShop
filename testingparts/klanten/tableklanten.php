@@ -20,7 +20,6 @@
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link active" href="tableklanten.php"><i class="fas fa-table"></i><span>Table</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="../klanten/klantenToevoegen.php">Toevoegen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Updaten</a></li>
                 </ul>
             </div>
         </nav>
