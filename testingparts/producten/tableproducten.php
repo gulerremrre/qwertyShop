@@ -20,7 +20,6 @@
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link active" href="../klanten/tableklanten.php"><i class="fas fa-table"></i><span>Table</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="productenToevoegen.php">Toevoegen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Updaten</a></li>
                 </ul>
             </div>
         </nav>
@@ -34,7 +33,7 @@
                         </div>
                         <div class="card-body">
                             <div class="row row-cols-1">
-                                <div class="col-auto col-md-auto col-xl-auto text-nowrap"><input class="bg-primary-subtle border-0 small" type="text" placeholder="Search for ..." title="e"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                <div class="col-auto col-md-auto col-xl-auto text-nowrap"><input class="bg-primary-subtle border-0 small" type="text" placeholder="search by name" title="e"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
                             </div>
                             <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                                 <?php
@@ -74,8 +73,8 @@
                                             echo "<td>" . $prijs . "</td>";
                                             echo "<td>" .$korting . "</td>";
                                             echo "<td>" . $genre . "</td>";
-                                            echo "<td>" . $merk . "</td>";
                                             echo "<td>" . $omschrijving . "</td>";
+                                            echo "<td>" . $merk  . "</td>";
                                             echo "<td>"
                                             ?>
                                             <form name="form2" method="post" action="updateProducten.php?actie=verander&artikelid=<?php echo $update ; ?> ">
@@ -105,9 +104,6 @@
                                     <p class="text-primary m-0 fw-bold">Merk info</p>
                                 </div>
                                 <div class="card-body">
-                                    <div class="row row-cols-1">
-                                        <div class="col-auto col-md-auto col-xl-auto text-nowrap"><input class="bg-primary-subtle border-0 small" type="text" placeholder="Search for ..." title="e"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
-                                    </div>
                                     <div class="table-responsive table mt-2" id="dataTable2" role="grid" aria-describedby="dataTable_info">
                                         <?php
                                         $mysqli = new MySQLi("localhost", "root", "", "computershopphp");
@@ -154,12 +150,9 @@
                         <div class="col-xl-5">
                         <div class="card shadow">
                             <div class="card-header py-3">
-                                <p class="text-primary m-0 fw-bold">Merk info</p>
+                                <p class="text-primary m-0 fw-bold">Genre info</p>
                             </div>
                             <div class="card-body">
-                                <div class="row row-cols-1">
-                                    <div class="col-auto col-md-auto col-xl-auto text-nowrap"><input class="bg-primary-subtle border-0 small" type="text" placeholder="Search for ..." title="e"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
-                                </div>
                                 <div class="table-responsive table mt-2" id="dataTable3" role="grid" aria-describedby="dataTable_info">
                                     <?php
                                     $mysqli = new MySQLi("localhost", "root", "", "computershopphp");
