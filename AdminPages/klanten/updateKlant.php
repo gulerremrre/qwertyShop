@@ -207,7 +207,7 @@
                                                     <div class="col">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="wachtwoord"><strong>wachtwoord:</strong></label>
-                                                            <input class="form-control" type="password" id="wachtwoord" name="wachtwoord" value="<?php echo $wachtwoord_update; ?>">
+                                                            <input class="form-control" type="password" id="wachtwoord" name="wachtwoord" >
                                                             <label id="wachtwoordongeldig" class="text-danger"></label>
                                                         </div>
                                                     </div>
@@ -270,7 +270,7 @@
             let phoneNumber = document.getElementById("telefoon").value;
             if(!validatePhoneNumber(phoneNumber) || document.getElementById("telefoon").value === "" )
             {
-                document.getElementById("telefoonongeldig").innerHTML = "Alleen cijfers invullen.";
+                document.getElementById("telefoonongeldig").innerHTML = "Alleen een geldig nummer invullen.";
                 ok=false;
 
             }
