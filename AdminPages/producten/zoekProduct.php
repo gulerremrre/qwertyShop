@@ -18,9 +18,9 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link active" href="../klanten/tableklanten.php"><i class="fas fa-table"></i><span>Tabel Producten</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="productenToevoegen.php">Product toevoegen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="zoekProduct.php">Product zoeken</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../klanten/tableklanten.php"><i class="fas fa-table"></i><span>Tabel producten</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="productenToevoegen.php">producten toevoegen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="zoekProduct.php">producten zoeken</a></li>
                 </ul>
             </div>
         </nav>
