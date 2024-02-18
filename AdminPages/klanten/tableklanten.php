@@ -76,6 +76,7 @@
                                         echo "<table class='table table-striped table-light my-0 table-bordered'>";
                                         echo "<thead>";
                                         echo "<tr>";
+                                        echo "<th>Klantnr</th>";
                                         echo "<th>Voornaam</th>";
                                         echo "<th>Achternaam</th>";
                                         echo "<th>Adres</th>";
@@ -90,6 +91,7 @@
                                             $update =$klantnr;
                                             echo "<tbody>";
                                             echo "<tr>";
+                                            echo "<td>" . $klantnr . "</td>";
                                             echo "<td>" . $klantvoornaam . "</td>";
                                             echo "<td>" . $klantachternaam . "</td>";
                                             echo "<td>" . $adres . "</td>";
@@ -143,7 +145,7 @@
                                     echo "<thead>";
                                     echo "<tr>";
                                     echo "<th>PostcodeID</th>";
-                                    echo "<th>Postcodenaam</th>";
+                                    echo "<th>Postcode</th>";
                                     echo "<th>Stadsnaam</th>";
                                     echo "</tr>";
                                     echo "</thead>";
