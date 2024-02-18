@@ -58,9 +58,7 @@
                             <p class="text-primary m-0 fw-bold">Artikels info</p>
                         </div>
                         <div class="card-body">
-                            <div class="row row-cols-1">
-                                <div class="col-auto col-md-auto col-xl-auto text-nowrap"><input class="bg-primary-subtle border-0 small" type="text" placeholder="search by name" title="e"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
-                            </div>
+
                             <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                                 <?php
                                     $mysqli = new MySQLi("localhost", "root", "", "computershopphp");
