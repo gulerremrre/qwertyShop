@@ -267,7 +267,8 @@
 
             }
 
-            if(isNaN(document.getElementById("telefoon").value) || document.getElementById("telefoon").value === "" )
+            let phoneNumber = document.getElementById("telefoon").value;
+            if(!validatePhoneNumber(phoneNumber) || document.getElementById("telefoon").value === "" )
             {
                 document.getElementById("telefoonongeldig").innerHTML = "Alleen cijfers invullen.";
                 ok=false;
@@ -318,6 +319,13 @@
                 event.preventDefault();
             }
 
+        }
+
+        function validatePhoneNumber(phoneNumber)
+        {
+            // This pattern matches Belgian phone numbers in the format of "+32 x xxx xx xx" or "0x xxx xx xx".
+            let pattern = new RegExp(/^((\+32|0)[1-9]\s?\d{2}\s?\d{2}\s?\d{2}\s?\d{2})$/);
+            return pattern.test(phoneNumber);
         }
     </script>
 </body>
