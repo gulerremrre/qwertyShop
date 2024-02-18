@@ -93,8 +93,8 @@
                                             echo "<td>" . $klantvoornaam . "</td>";
                                             echo "<td>" . $klantachternaam . "</td>";
                                             echo "<td>" . $adres . "</td>";
-                                            echo "<td>" . $telefoon . "</td>";
                                             echo "<td>" . $postcodeid . "</td>";
+                                            echo "<td>" . $telefoon . "</td>";
                                             echo "<td>" . $email . "</td>";
                                             echo "<td>";
                                             ?>
