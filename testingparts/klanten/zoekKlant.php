@@ -109,7 +109,6 @@
                                             echo "<th> Postcode</th>";
                                             echo "<th> Adres</th>";
                                             echo "<th> Email</th>";
-                                            echo "<th> Wachtwoord</th>";
                                             echo "<th> Update</th>";
                                             echo "</tr>";
                                             echo "</thead>";
@@ -125,7 +124,6 @@
                                                 echo "<td>" . $postcode . "</td>";
                                                 echo "<td>" . $adres . "</td>";
                                                 echo "<td>" . $email  . "</td>";
-                                                echo "<td>" . $wachtwoord . "</td>";
                                                 echo "<td>"
                                                 ?>
                                                 <form name="form2" method="post" action="updateKlant.php?actie=verander&klantid=<?php echo $update ; ?> ">

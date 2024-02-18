@@ -82,7 +82,6 @@
                                         echo "<th>Postcode</th>";
                                         echo "<th>telefoon</th>";
                                         echo "<th>Email</th>";
-                                        echo "<th>Wachtwoord</th>";
                                         echo "<th>Update</th>";
                                         echo "</tr>";
                                         echo "</thead>";
@@ -97,7 +96,6 @@
                                             echo "<td>" . $telefoon . "</td>";
                                             echo "<td>" . $postcodeid . "</td>";
                                             echo "<td>" . $email . "</td>";
-                                            echo "<td>" . $wachtwoord . "</td>";
                                             echo "<td>";
                                             ?>
                                             <form name="form2" method="post" action="updateKlant.php?actie=verander&klantid=<?php echo $update ; ?> ">
