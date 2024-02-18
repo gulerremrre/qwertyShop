@@ -71,7 +71,6 @@
                                             <option value="telefoon">Telefoon</option>
                                             <option value="postcodeid">Postcode</option>
                                             <option value="email">Email</option>
-                                            <option value="wacthwoord">Wachtwoord</option>
                                             <option value="adres">Adres</option>
 
                                         </select>
