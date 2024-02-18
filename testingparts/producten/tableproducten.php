@@ -19,7 +19,8 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link active" href="../klanten/tableklanten.php"><i class="fas fa-table"></i><span>Table</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="productenToevoegen.php">Toevoegen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productenToevoegen.php">producten toevoegen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="zoekProduct.php">producten zoeken</a></li>
                 </ul>
             </div>
         </nav>
