@@ -20,6 +20,7 @@
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link active" href="tableklanten.php"><i class="fas fa-table"></i><span>Tabel klenten</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="../klanten/klantenToevoegen.php">Klant toevoegen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../klanten/zoekKlant.php">Klant zoeken</a></li>
                 </ul>
             </div>
         </nav>
