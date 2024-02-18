@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2024 at 05:12 PM
+-- Generation Time: Feb 18, 2024 at 06:27 PM
 -- Server version: 5.7.17
 -- PHP Version: 5.6.30
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `leerphp`
+-- Database: `computershopphp`
 --
 
 -- --------------------------------------------------------
@@ -34,7 +34,7 @@ CREATE TABLE `tblartikels` (
   `prijs` double NOT NULL,
   `korting` int(11) NOT NULL,
   `genreid` varchar(20) NOT NULL,
-  `omschrijving` varchar(50) NOT NULL,
+  `omschrijving` text NOT NULL,
   `merk` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -43,8 +43,8 @@ CREATE TABLE `tblartikels` (
 --
 
 INSERT INTO `tblartikels` (`artikelnr`, `artikelnaam`, `prijs`, `korting`, `genreid`, `omschrijving`, `merk`) VALUES
-(13, 'Geforce RTX 3060', 560, 0, 'Hardware', 'een gpu van Nvidia gemaakt voor laptops', 'Nvidia'),
-(14, 'AMD Ryzen 5000x Series 7', 978, 0, 'CPU', 'een AMD cpu voor een AMD moederbord', 'AMD'),
+(13, 'Geforce RTX 3060', 560, 0, 'GPU', 'een gpu van Nvidia gemaakt voor laptops', 'Nvidia'),
+(14, 'AMD Ryzen 5000x Series 7', 978, 0, 'CPU', 'een AMD cpu voor een AMD moederbord', 'Acer'),
 (15, 'HP Gaming laptop Omen 16-XF0005NB AMD Ryzen 7 7840HS', 177.99, 0, 'Laptop', 'Een Omen gaming laptop ', 'Omen'),
 (16, 'NVIDIA GeForce RTX 4090', 2145, 259, 'GPU', 'een NVIDIA GeForce GPU', 'Nvidia'),
 (17, 'Redux Andromeda I149K R49', 6199, 428, 'Pc', 'een Prebuild Computer van Redux', 'Redux'),
@@ -73,7 +73,7 @@ ALTER TABLE `tblartikels`
 -- AUTO_INCREMENT for table `tblartikels`
 --
 ALTER TABLE `tblartikels`
-  MODIFY `artikelnr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;COMMIT;
+  MODIFY `artikelnr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

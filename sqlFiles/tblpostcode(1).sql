@@ -25,49 +25,43 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblmerk`
+-- Table structure for table `tblpostcode`
 --
 
-CREATE TABLE `tblmerk` (
-  `merkid` int(11) NOT NULL,
-  `merk` varchar(20) NOT NULL
+CREATE TABLE `tblpostcode` (
+  `postcodeid` int(11) NOT NULL,
+  `postcode` int(4) NOT NULL,
+  `stadsnaam` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblmerk`
+-- Dumping data for table `tblpostcode`
 --
 
-INSERT INTO `tblmerk` (`merkid`, `merk`) VALUES
-(1, 'Nvidia'),
-(2, 'AMD'),
-(3, 'Omen'),
-(4, 'Redux'),
-(5, 'Corsair'),
-(6, 'MSi'),
-(7, 'Crucial'),
-(8, 'Coolermaster'),
-(9, 'Acer'),
-(10, 'HP');
+INSERT INTO `tblpostcode` (`postcodeid`, `postcode`, `stadsnaam`) VALUES
+(1, 9070, 'Heusden'),
+(3, 9080, 'lochristi'),
+(5, 9000, 'Gent');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `tblmerk`
+-- Indexes for table `tblpostcode`
 --
-ALTER TABLE `tblmerk`
-  ADD PRIMARY KEY (`merkid`);
+ALTER TABLE `tblpostcode`
+  ADD PRIMARY KEY (`postcodeid`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `tblmerk`
+-- AUTO_INCREMENT for table `tblpostcode`
 --
-ALTER TABLE `tblmerk`
-  MODIFY `merkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;COMMIT;
+ALTER TABLE `tblpostcode`
+  MODIFY `postcodeid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
