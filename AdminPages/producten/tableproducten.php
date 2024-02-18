@@ -58,7 +58,22 @@
                             <p class="text-primary m-0 fw-bold">Artikels info</p>
                         </div>
                         <div class="card-body">
-
+                            <div class="row row-cols-1">
+                                <form method="get" name="searchForm" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                    <label for="search">Sorteer op:</label>
+                                    <select name="sortBy" id="sortBy" class="form-select">
+                                        <option value="artikelnr" selected>ProductID</option>
+                                        <option value="artikelnaam">Productnaam</option>
+                                        <option value="prijs">Prijs</option>
+                                        <option value="korting">Korting</option>
+                                        <option value="genreid">Genre</option>
+                                        <option value="omschrijving">Omschrijving</option>
+                                        <option value="merk">Merk</option>
+                                    </select>
+                                    <br>
+                                    <input type="submit" class="btn btn-primary" name="sorteer" id="sorteer" value="Sorteer">
+                                </form>
+                            </div>
                             <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                                 <?php
                                     $mysqli = new MySQLi("localhost", "root", "", "computershopphp");
@@ -66,8 +81,17 @@
                                     {
                                         trigger_error('Fout bij verbinding:' .$mysqli->error);
                                     }
-                                    else {
-                                        $sql = "SELECT * FROM tblartikels";
+                                    else
+                                    {
+                                        if(isset($_GET['sortBy']))
+                                        {
+                                            $sortBy = $_GET['sortBy'];
+                                        }
+                                        else
+                                        {
+                                            $sortBy = 'artikelnr'; //standaard waarde
+                                        }
+                                        $sql = "SELECT * FROM tblartikels ORDER BY $sortBy ASC";
                                         $stmt = $mysqli->prepare($sql);
                                         $stmt->execute();
 
@@ -219,11 +243,10 @@
                                 </div>
                             </div>
                         </div>
-                </div>
+                    </div>
                     </div>
                 </div>
             </div>
-
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/theme.js"></script>
 </body>
