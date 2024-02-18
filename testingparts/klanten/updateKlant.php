@@ -81,8 +81,9 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light navbar-collapse" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link active" href="tableklanten.php"><span>Alle Klanten</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="klantenToevoegen.php">Toevoegen Klanten</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tableklanten.php"><span>Tabel klanten</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="klantenToevoegen.php">Klant toevoegen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="zoekKlant.php">Klant zoeken</a></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -109,8 +110,8 @@
                             <li class="nav-item text-dark"><a class="nav-link link-dark" href="../../gaminglaptop.html">Laptop</a></li>
                             <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Components</a></li>
                             <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Pages</a></li>
-                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Login</a></li>
-                            <li class="nav-item"><a class="nav-link link-dark" href="#">Admin</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="../../login.html">Login</a></li>
+                            <li class="nav-item"><a class="nav-link link-dark" href="../main/Main.html">Admin</a></li>
                         </ul>
                     </div>
                 </nav>

@@ -18,9 +18,9 @@
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link active" href="tableklanten.php"><i class="fas fa-table"></i><span>Tabel klanten</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="../klanten/klantenToevoegen.php">Klant toevoegen</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../klanten/zoekKlant.php">Klant zoeken</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tableklanten.php"><span>Tabel klanten</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="klantenToevoegen.php">Klant toevoegen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="zoekKlant.php">Klant zoeken</a></li>
                 </ul>
             </div>
         </nav>
@@ -41,13 +41,13 @@
                                     </form>
                                 </div>
                             </li>
-                            <li class="nav-item"><a class="nav-link link-dark" href="#">Home</a></li>
-                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Pc's</a></li>
-                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Laptop</a></li>
+                            <li class="nav-item"><a class="nav-link link-dark" href="../../index.html">Home</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="../../gamingpc.html">Pc's</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="../../gaminglaptop.html">Laptop</a></li>
                             <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Components</a></li>
                             <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Pages</a></li>
-                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Login</a></li>
-                            <li class="nav-item"><a class="nav-link link-dark" href="#">Admin</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="../../login.html">Login</a></li>
+                            <li class="nav-item"><a class="nav-link link-dark" href="../main/Main.html">Admin</a></li>
                         </ul>
                     </div>
                 </nav>

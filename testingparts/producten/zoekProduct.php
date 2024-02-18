@@ -41,13 +41,13 @@
                                     </form>
                                 </div>
                             </li>
-                            <li class="nav-item"><a class="nav-link link-dark" href="#">Home</a></li>
-                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Pc's</a></li>
-                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Laptop</a></li>
+                            <li class="nav-item"><a class="nav-link link-dark" href="../../index.html">Home</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="../../gamingpc.html">Pc's</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="../../gaminglaptop.html">Laptop</a></li>
                             <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Components</a></li>
                             <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Pages</a></li>
-                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="#">Login</a></li>
-                            <li class="nav-item"><a class="nav-link link-dark" href="#">Admin</a></li>
+                            <li class="nav-item text-dark"><a class="nav-link link-dark" href="../../login.html">Login</a></li>
+                            <li class="nav-item"><a class="nav-link link-dark" href="../main/Main.html">Admin</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -67,6 +67,7 @@
                                         <select class="form-select" name="searchCategory" id="searchCategory">
                                             <option value="artikelnr">Productid</option>
                                             <option value="artikelnaam">Productnaam</option>
+                                            <option value="prijs">Prijs</option>
                                             <option value="korting">Korting</option>
                                             <option value="genreid">Genre</option>
                                             <option value="merk">Merk</option>
