@@ -52,10 +52,10 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">zoek product</h3>
+                    <h3 class="text-dark mb-4">zoek Klant</h3>
                     <div class="card shadow">
                         <div class="card-header py-3">
-                            <p class="text-primary m-0 fw-bold">Artikels info</p>
+                            <p class="text-primary m-0 fw-bold">Klanten info</p>
                         </div>
                         <div class="card-body">
                             <div class="row row-cols-1">

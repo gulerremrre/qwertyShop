@@ -121,7 +121,7 @@
                                 <div class="col">
                                     <div class="card shadow mb-3">
                                         <div class="card-header py-3">
-                                            <p class="text-primary m-0 fw-bold">Product Toevoegen</p>
+                                            <p class="text-primary m-0 fw-bold">Product updaten</p>
                                         </div>
                                         <div class="card-body">
                                             <form name="formtoevoegen" id="formtoevoegen" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
