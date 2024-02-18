@@ -58,6 +58,22 @@
                             <p class="text-primary m-0 fw-bold">klanten info</p>
                         </div>
                         <div class="card-body">
+                            <div class="row row-cols-1">
+                                <form method="get" name="searchForm" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                                    <label for="search">Sorteer op:</label>
+                                    <select name="sortBy" id="sortBy" class="form-select">
+                                        <option value="klantnr" selected>Klantnr</option>
+                                        <option value="klantvoornaam">Voornaam</option>
+                                        <option value="klantachternaam">Achternaam</option>
+                                        <option value="telefoon">Telefoon</option>
+                                        <option value="postcodeid">Postcode</option>
+                                        <option value="email">Email</option>
+                                        <option value="adres">Adres</option>
+                                    </select>
+                                    <br>
+                                    <input type="submit" class="btn btn-primary" name="sorteer" id="sorteer" value="Sorteer">
+                                </form>
+                            </div>
                             <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                                 <?php
                                     $mysqli = new MySQLi("localhost", "root", "", "computershopphp");
@@ -65,8 +81,17 @@
                                     {
                                         trigger_error('Fout bij verbinding:' .$mysqli->error);
                                     }
-                                    else {
-                                        $sql = "SELECT * FROM tblklanten";
+                                    else
+                                    {
+                                        if(isset($_GET["sortBy"]))
+                                        {
+                                            $sortBy = $_GET["sortBy"];
+                                        }
+                                        else
+                                        {
+                                            $sortBy = "klantnr";
+                                        }
+                                        $sql = "SELECT * FROM tblklanten order by $sortBy ASC";
                                         $stmt = $mysqli->prepare($sql);
                                         $stmt->execute();
 
