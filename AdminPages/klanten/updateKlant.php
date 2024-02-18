@@ -246,7 +246,7 @@
 
             if(document.getElementById("klantvoornaam").value === "")
             {
-                document.getElementById("voornaamongeldig").innerHTML = "geef een voornaam in";
+                document.getElementById("voornaamongeldig").innerHTML = "geef een voornaam in.";
                 ok = false
             }
             else
@@ -257,7 +257,7 @@
 
             if(document.getElementById("klantachternaam").value === "")
             {
-                document.getElementById("achternaamongeldig").innerHTML = "geef een achternaam invullen.";
+                document.getElementById("achternaamongeldig").innerHTML = "geef een achternaam in.";
                 ok=false;
 
             }
@@ -282,7 +282,7 @@
 
             if(document.getElementById("email").value === "")
             {
-                document.getElementById("emailongeldig").innerHTML = "geef een email in";
+                document.getElementById("emailongeldig").innerHTML = "geef een email in.";
                 ok = false
             }
             else
@@ -292,7 +292,7 @@
 
             if(document.getElementById("wachtwoord").value === "")
             {
-                document.getElementById("wachtwoordongeldig").innerHTML = "geef een wachtwoord in";
+                document.getElementById("wachtwoordongeldig").innerHTML = "geef een wachtwoord in.";
                 ok = false
             }
             else
@@ -303,7 +303,7 @@
 
             if(document.getElementById("adres").value === "")
             {
-                document.getElementById("adresongeldig").innerHTML = "geef een adres in";
+                document.getElementById("adresongeldig").innerHTML = "geef een adres in.";
                 ok = false
             }
             else
