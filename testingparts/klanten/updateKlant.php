@@ -47,7 +47,7 @@
             $telefoon = $_POST["telefoon"];
             $postcodeid = $_POST["postcode"];
             $email = $_POST["email"];
-            $wachtwoord = password_hash($_POST["wachtwoord"]);
+            $wachtwoord = password_hash($_POST["wachtwoord"] , PASSWORD_DEFAULT);
             $adres = $_POST["adres"];
 
             $stmt->bind_param('sssssssi',$klantvoornaam,$klantachternaam, $telefoon, $postcodeid, $email, $wachtwoord, $adres, $klantid);
