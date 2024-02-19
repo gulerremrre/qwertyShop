@@ -10,39 +10,34 @@
     <link rel="stylesheet" href="../assets/fonts/fontawesome-all.min.css">
 </head>
 
-    <?php
-    $mysqli = new MySQLi("localhost", "root", "", "computershopphp");
-    $Error = "";
+<?php
+$mysqli = new MySQLi("localhost", "root", "", "computershopphp");
+$Error = "";
 
-    if ((isset($_POST["voegtoe"])))
-    {
+if ((isset($_POST["voegtoe"]))) {
 
-        $sql = "INSERT INTO tblartikels (artikelnaam, prijs, korting, genreid, omschrijving, merk) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = $mysqli->prepare($sql);
+    $sql = "INSERT INTO tblartikels (artikelnaam, prijs, korting, genreid, omschrijving, merk) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = $mysqli->prepare($sql);
 
-        $stmt->bind_param('sdisss', $artikelNaam, $prijs, $korting, $genreid, $omschrijving, $merk);
-        $artikelNaam = $_POST['artikelnaam'];
-        $korting = $_POST['korting'];
-        $prijs = $_POST["prijs"];
-        $merk = $_POST['merk'];
-        $omschrijving = $_POST['omschrijving'];
-        $genreid = $_POST['genre'];
-
-
-        if ($stmt->execute())
-        {
-            header("location:tableproducten.php");
-        }
-        else
-        {
-            echo '<p class="text-danger">Error: ' . $stmt->error . '</p>';
-        }
+    $stmt->bind_param('sdisss', $artikelNaam, $prijs, $korting, $genreid, $omschrijving, $merk);
+    $artikelNaam = $_POST['artikelnaam'];
+    $korting = $_POST['korting'];
+    $prijs = $_POST["prijs"];
+    $merk = $_POST['merk'];
+    $omschrijving = $_POST['omschrijving'];
+    $genreid = $_POST['genre'];
 
 
-        $stmt->close();
-
+    if ($stmt->execute()) {
+        header("location:tableproducten.php");
+    } else {
+        echo '<p class="text-danger">Error: ' . $stmt->error . '</p>';
     }
-    ?>
+
+
+    $stmt->close();
+}
+?>
 
 <body id="page-top">
     <div id="wrapper">
@@ -56,6 +51,8 @@
                     <li class="nav-item"><a class="nav-link active" href="tableproducten.php"><i class="fas fa-table"></i><span>Tabel producten</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="productenToevoegen.php">producten toevoegen</a></li>
                     <li class="nav-item"><a class="nav-link" href="zoekProduct.php">producten zoeken</a></li>
+                    <li class="nav-item"><a class="nav-link" href="merkToevoegen.php">merk toevoegen</a></li>
+
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
             </div>
@@ -149,25 +146,18 @@
                                                                 <optgroup label="Select Merk">
                                                                     <?php
                                                                     $sql = "SELECT merk FROM tblmerk ORDER BY merk ASC ";
-                                                                    if ($stmt = $mysqli->prepare($sql))
-                                                                    {
-                                                                        if (!$stmt->execute())
-                                                                        {
+                                                                    if ($stmt = $mysqli->prepare($sql)) {
+                                                                        if (!$stmt->execute()) {
                                                                             echo 'Het uitvoeren van de query is mislukt: ' . $stmt->error . ' in query: ' . $sql;
-                                                                        }
-                                                                        else
-                                                                        {
+                                                                        } else {
                                                                             $stmt->bind_result($merk);
-                                                                            while ($stmt->fetch())
-                                                                            {
+                                                                            while ($stmt->fetch()) {
 
                                                                                 echo '<option>' . $merk .  '</option>';
                                                                             }
                                                                         }
                                                                         $stmt->close();
-                                                                    }
-                                                                    else
-                                                                    {
+                                                                    } else {
                                                                         echo 'Er zit een fout in de query: ' . $mysqli->error;
                                                                     }
                                                                     ?>
@@ -182,28 +172,21 @@
                                                             <select class="form-select" id="genre" name="genre">
                                                                 <optgroup label="Select Genre">
                                                                     <?php
-                                                                        $sql = "SELECT genre FROM tblgenre ORDER BY genre ASC";
+                                                                    $sql = "SELECT genre FROM tblgenre ORDER BY genre ASC";
 
-                                                                        if ($stmt = $mysqli->prepare($sql))
-                                                                        {
-                                                                            if (!$stmt->execute())
-                                                                            {
-                                                                                echo 'Het uitvoeren van de query is mislukt: ' . $stmt->error . ' in query: ' . $sql;
+                                                                    if ($stmt = $mysqli->prepare($sql)) {
+                                                                        if (!$stmt->execute()) {
+                                                                            echo 'Het uitvoeren van de query is mislukt: ' . $stmt->error . ' in query: ' . $sql;
+                                                                        } else {
+                                                                            $stmt->bind_result($genre2);
+                                                                            while ($stmt->fetch()) {
+                                                                                echo '<option value="' . $genre2 . '">' . $genre2 .  '</option>';
                                                                             }
-                                                                            else
-                                                                            {
-                                                                                $stmt->bind_result($genre2);
-                                                                                while ($stmt->fetch())
-                                                                                {
-                                                                                    echo '<option value="' . $genre2 . '">' . $genre2 .  '</option>';
-                                                                                }
-                                                                            }
-                                                                            $stmt->close();
                                                                         }
-                                                                        else
-                                                                        {
-                                                                            echo 'Er zit een fout in de query: ' . $mysqli->error;
-                                                                        }
+                                                                        $stmt->close();
+                                                                    } else {
+                                                                        echo 'Er zit een fout in de query: ' . $mysqli->error;
+                                                                    }
                                                                     ?>
                                                                 </optgroup>
                                                             </select>
@@ -214,6 +197,8 @@
                                             </form>
                                         </div>
                                     </div>
+
+
                                     <div class="card shadow">
                                         <div class="card-header py-3">
                                             <p class="text-primary m-0 fw-bold">Merk toevoegen</p>
@@ -224,28 +209,29 @@
                                                     <label class="form-label" for="merkid"><strong>Merk:</strong></label>
                                                     <input class="form-control" type="text" id="merkinput" name="merkinput" required>
                                                 </div>
-                                                <div class="mb-3"><input class="btn btn-primary" id="merksubmit" name="merksubmit" type="submit" value="Merk toevoegen"></div>
+                                                <a href="merkToevoegen.php">
+                                                    <div class="mb-3"><input class="btn btn-primary" id="merksubmit" name="merksubmit" type="submit" value="Merk toevoegen"></div>
+                                                </a>
                                             </form>
                                         </div>
                                         <?php
-                                        if ((isset($_POST["merksubmit"])))
-                                        {
+
+                                        $mysqli = new MySQLi("localhost", "root", "", "computershopphp");
+                                        if ((isset($_POST["merksubmit"]))) {
                                             $sql = "INSERT INTO tblmerk (merk) VALUES (?)";
                                             $stmt = $mysqli->prepare($sql);
                                             $stmt->bind_param('s', $merk);
                                             $merk = $_POST['merkinput'];
-                                            if ($stmt->execute())
-                                            {
+                                            if ($stmt->execute()) {
                                                 echo "Merk is toegevoegd";
-                                            }
-                                            else
-                                            {
+                                            } else {
                                                 echo "Merk is niet toegevoegd";
                                             }
                                             $stmt->close();
                                         }
                                         ?>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -268,18 +254,14 @@
                             </div>
                         </div>
                         <?php
-                        if ((isset($_POST["genrevoeg"])))
-                        {
+                        if ((isset($_POST["genrevoeg"]))) {
                             $sql = "INSERT INTO tblgenre (genre) VALUES (?)";
                             $stmt = $mysqli->prepare($sql);
                             $stmt->bind_param('s', $genre);
                             $genre = $_POST['genresubmit'];
-                            if ($stmt->execute())
-                            {
+                            if ($stmt->execute()) {
                                 echo "Genre is toegevoegd";
-                            }
-                            else
-                            {
+                            } else {
                                 echo "Genre is niet toegevoegd";
                             }
                             $stmt->close();
@@ -299,61 +281,45 @@
     <script src="../assets/js/theme.js"></script>
 
     <script>
-        function wijzig(event)
-        {
-            let ok =true;
+        function wijzig(event) {
+            let ok = true;
 
-            if(document.getElementById("artikelnaam").value === "")
-            {
+            if (document.getElementById("artikelnaam").value === "") {
                 document.getElementById("productongeldig").innerHTML = "geef een productnaam in";
                 ok = false
-            }
-            else
-            {
+            } else {
                 document.getElementById("productongeldig").innerHTML = "";
             }
 
 
-            if(isNaN(document.getElementById("prijs").value) || document.getElementById("prijs").value === "")
-            {
+            if (isNaN(document.getElementById("prijs").value) || document.getElementById("prijs").value === "") {
                 document.getElementById("prijsongeldig").innerHTML = "Alleen cijfers invullen.";
-                ok=false;
+                ok = false;
 
-            }
-            else
-            {
+            } else {
                 document.getElementById("prijsongeldig").innerHTML = "";
 
             }
 
-            if(isNaN(document.getElementById("korting").value) || document.getElementById("korting").value === "" )
-            {
+            if (isNaN(document.getElementById("korting").value) || document.getElementById("korting").value === "") {
                 document.getElementById("kortingongeldig").innerHTML = "Alleen cijfers invullen.";
-                ok=false;
+                ok = false;
 
-            }
-            else
-            {
+            } else {
                 document.getElementById("kortingongeldig").innerHTML = "";
 
             }
 
-            if(document.getElementById("omschrijving").value === "")
-            {
+            if (document.getElementById("omschrijving").value === "") {
                 document.getElementById("omschrijvingongeldig").innerHTML = "geef een omschrijving in";
                 ok = false
-            }
-            else
-            {
+            } else {
                 document.getElementById("omschrijvingongeldig").innerHTML = "";
             }
 
-            if(ok === true)
-            {
+            if (ok === true) {
                 document.formtoevoegen.submit();
-            }
-            else
-            {
+            } else {
                 event.preventDefault();
             }
 
