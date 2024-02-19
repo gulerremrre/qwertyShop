@@ -11,7 +11,7 @@ Zoekfunctie klanten werkt niet //klaar
 Klant en productid moet “read only” zijn //klaar
 Wachtwoorden mogen niet zichtbaar zijn // klaar
 Stadsnaam veranderen naar gemeente
-Merken en Genres toevoegen op een andere pagina
+Merken en Genres toevoegen op een andere pagina //klaar
 Updaten en verwijderen van Merken en Genres
 Gemeenten moeten met postcodes worden getoond (9000 - Gent)
 Gemeente moet worden getoond ipv postcode
